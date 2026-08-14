@@ -1,0 +1,26 @@
+# Menyimpan data banyak saham (list of dictionaries)
+portofolio = [
+    {"kode": "BBCA", "nama": "Bank Central Asia", "harga_beli": 30000, "jumlah_lembar": 100},
+    {"kode": "TLKM", "nama": "Telkom Indonesia", "harga_beli": 4000, "jumlah_lembar": 200},
+    {"kode": "ASII", "nama": "Astra International", "harga_beli": 7000, "jumlah_lembar": 150},
+    {"kode": "UNVR", "nama": "Unilever Indonesia", "harga_beli": 8000, "jumlah_lembar": 50},
+    {"kode": "GGRM", "nama": "Gudang Garam", "harga_beli": 60000, "jumlah_lembar": 30}
+]
+
+total_nilai_portofolio = 0
+
+print("=== Detail Portofolio Saham ===")
+for saham in portofolio:
+    nilai_saham = saham["harga_beli"] * saham["jumlah_lembar"]
+    total_nilai_portofolio += nilai_saham
+    print(f"- {saham['kode']} ({saham['nama']}) | Harga Beli: Rp {saham['harga_beli']:,} | Lembar: {saham['jumlah_lembar']} | Nilai: Rp {nilai_saham:,}")
+
+print("-" * 65)
+print(f"Total Nilai Portofolio: Rp {total_nilai_portofolio:,}")
+
+# Menhitung bobot (alokasi) masing-masing saham dalam portofolio
+print("\n=== Bobot Saham dalam Portofolio ===")
+for saham in portofolio:
+    total_harga_saham = saham["harga_beli"] * saham["jumlah_lembar"]
+    bobot = (total_harga_saham / total_nilai_portofolio) * 100
+    print(f"- {saham['kode']}: {saham['nama']} | Bobot: {bobot:.2f}%")

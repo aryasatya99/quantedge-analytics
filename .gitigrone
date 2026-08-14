@@ -1,0 +1,16 @@
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# VS Code & macOS system files
+.vscode/
+.DS_Store
+
+# Output lokal (opsional, jika tidak ingin mengunggah file CSV mentah)
+outputs/csv/*.csv
